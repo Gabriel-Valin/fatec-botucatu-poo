@@ -46,5 +46,30 @@ public class Aula4 {
         public double getSaldo() {
             return saldo;
         }
+        
+        public void depositar(double valorDeposito) {
+            saldo += valorDeposito;
+        }
+        
+        public boolean sacar(double valorSaque) {
+           if (valorSaque > saldo) {
+               return true;
+           }
+           
+           saldo -= valorSaque;
+           return true;
+        }
+        
+        public String printSaldo() {
+            return "Saldo: R$"+saldo;
+        }
+        
+        public String printsaldo(boolean comCliente) {
+            if (comCliente) {
+                return "Cliente: "+cliente+"\n"+printSaldo();
+            }
+            
+            return "Nao tem cliente";
+        }
     }
 }
